@@ -68,5 +68,83 @@ classDiagram
     Taller --> Mecanico : Dependencia
     Taller ..> Vehiculo : Usa
 
+````
+Diagrama Mermaid actualizado 
+
+```mermaid
+
+classDiagram
+    direction LR
+
+    class Cliente {
+        -String dni
+        -String nombre
+        -List~Vehiculo~ vehiculos
+        -List~Factura~ facturas
+        +addVehiculo(Vehiculo v)
+        +addFactura(Factura f)
+    }
+
+    class Vehiculo {
+        <<abstract>>
+        -String matricula
+        -String modelo
+        -List~Reparacion~ reparaciones
+        +addReparacion(String desc, double costo)
+    }
+
+    class Coche {
+        -int numPuertas
+    }
+
+    class Moto {
+        -boolean tieneSidecar
+    }
+
+    class Reparacion {
+        -String descripcion
+        -double costo
+        -LocalDate fecha
+        -Factura facturaAsociada
+    }
+
+    class Factura {
+        -String numeroFactura
+        -double baseImponible
+        -double totalConIVA
+        -Reparacion reparacionAsociada
+        -Cliente cliente
+        +calcularTotal()
+    }
+
+    class Especialista {
+        <<interface>>
+        +reparar(Vehiculo v)
+    }
+
+    class Mecanico {
+        -String nombre
+        -String especialidad
+        +reparar(Vehiculo v)
+    }
+
+    class Taller {
+        -String nombre
+        -Mecanico mecanicoAsignado
+        +gestionarReparacion(Vehiculo v, String desc, double costo)
+    }
+
+    %% Relaciones
+    Cliente "1" o-- "1..*" Vehiculo : Posee
+    Cliente "1" --> "0..*" Factura : Paga
+    Vehiculo <|-- Coche : Herencia
+    Vehiculo <|-- Moto : Herencia
+    Vehiculo "1" *-- "0..*" Reparacion : Mantiene
+    Reparacion "1" --> "1" Factura : Genera
+    Factura "1" --> "1" Reparacion : Detalla
+    Factura "1" --> "1" Cliente : Emitida a
+    Mecanico ..|> Especialista : Realización
+    Taller --> Mecanico : Dependencia
+    Taller ..> Vehiculo : Usa
 
 
