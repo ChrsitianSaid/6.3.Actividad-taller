@@ -71,6 +71,13 @@ classDiagram
 ````
 Diagrama Mermaid actualizado 
 
+Explicación del diagrama actualizado
+- Factura se asocia de manera unívoca a una Reparacion y a un Cliente, permitiendo el seguimiento de los cobros y la trazabilidad de las intervenciones.
+- Cliente mantiene una lista de facturas, facilitando la consulta del historial de pagos y la gestión administrativa.
+- La relación entre Reparacion y Factura es de asociación 1:1, ya que cada reparación genera una única factura.
+- El resto de relaciones y jerarquías se mantienen, garantizando la coherencia del modelo.
+
+
 ```mermaid
 
 classDiagram
