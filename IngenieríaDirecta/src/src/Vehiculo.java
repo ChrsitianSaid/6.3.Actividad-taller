@@ -45,7 +45,7 @@ public abstract class Vehiculo {
 	this.reparaciones = reparaciones;
  }
 
- // Getters y setters omitidos para brevedad
+
 }
 
 
