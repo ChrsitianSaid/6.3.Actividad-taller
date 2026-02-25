@@ -1,5 +1,8 @@
 package src;
 
+import java.util.ArrayList;
+import java.util.List;
+
 //Cliente.java
 public class Cliente {
  private String dni;

@@ -1,5 +1,9 @@
 package src;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
 //Vehiculo.java
 public abstract class Vehiculo {
  private String matricula;
@@ -44,24 +48,8 @@ public abstract class Vehiculo {
  // Getters y setters omitidos para brevedad
 }
 
-//Coche.java
-public class Coche extends Vehiculo {
- private int numPuertas;
 
- public Coche(String matricula, String modelo, int numPuertas) {
-     super(matricula, modelo);
-     this.numPuertas = numPuertas;
- }
- // Getters y setters
-}
 
-//Moto.java
-public class Moto extends Vehiculo {
- private boolean tieneSidecar;
 
- public Moto(String matricula, String modelo, boolean tieneSidecar) {
-     super(matricula, modelo);
-     this.tieneSidecar = tieneSidecar;
- }
- // Getters y setters
-}
+
+

@@ -1,5 +1,7 @@
 package src;
 
+import java.time.LocalDate;
+
 //Reparacion.java
 public class Reparacion {
  private String descripcion;
