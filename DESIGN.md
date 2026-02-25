@@ -1,3 +1,10 @@
+El diagrama anterior modela los elementos principales del sistema:
+- Cliente: Representa a los usuarios del taller. Cada cliente puede poseer uno o varios vehículos, reflejado mediante una relación de agregación (rombo vacío) y multiplicidad "1..*".
+- Vehiculo: Clase abstracta que encapsula los atributos y comportamientos comunes a todos los vehículos. De ella heredan las clases concretas Coche y Moto.
+- Reparacion: Cada vehículo mantiene una lista de reparaciones, estableciendo una relación de composición (rombo relleno), ya que una reparación no tiene sentido fuera del contexto de un vehículo.
+- Especialista: Interfaz que define el contrato para cualquier entidad capaz de realizar reparaciones. Mecanico implementa esta interfaz, permitiendo polimorfismo y desacoplamiento.
+- Taller: Clase que orquesta la gestión de reparaciones, utilizando un mecánico de manera puntual (dependencia) para asignar y ejecutar reparaciones sobre los vehículos.
+
 ```mermaid
 
 ---
@@ -60,3 +67,6 @@ classDiagram
     Mecanico ..|> Especialista : Realización
     Taller --> Mecanico : Dependencia
     Taller ..> Vehiculo : Usa
+
+
+
