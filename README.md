@@ -52,5 +52,7 @@ Beneficios concretos en el sistema:
 
 
 
+En esta actividad eh usado la IA (Copilot) para facilitar los commits, descripciones y algunas explicaciones
+
 
 
